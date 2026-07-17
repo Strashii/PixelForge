@@ -1,6 +1,6 @@
-# KImago
+# PixelForge
 
-KImago is a modular image processing suite integrated directly into the KDE Dolphin file manager as context menu actions. It provides batch resizing, format conversion, background removal, and GPU-accelerated super-resolution scaling directly from the right-click menu, without launching full GUI image editors.
+PixelForge is a modular image processing suite integrated directly into the KDE Dolphin file manager as context menu actions. It provides batch resizing, format conversion, background removal, and GPU-accelerated super-resolution scaling directly from the right-click menu, without launching full GUI image editors.
 
 Designed for Linux users who want command-line speed wrapped in a native KDE Plasma desktop integration.
 
@@ -19,11 +19,11 @@ Designed for Linux users who want command-line speed wrapped in a native KDE Pla
 
 ## Architecture
 
-KImago uses a decoupled design where the launcher scans for actions, delegates options to KDE UI dialogs, and executes files through a structured pipeline.
+PixelForge uses a decoupled design where the launcher scans for actions, delegates options to KDE UI dialogs, and executes files through a structured pipeline.
 
 ```mermaid
 graph TD
-    Dolphin[Dolphin Context Menu] -->|Click| Launcher[Launcher: kimago]
+    Dolphin[Dolphin Context Menu] -->|Click| Launcher[Launcher: pixelforge]
     Launcher -->|Scan actions/*.sh| Scanner{Plugin Scanner}
     Scanner -->|Only Registered & Dependencies Met| Menu[KDialog Main Menu]
     Menu -->|Select Action| Engine[Execution Engine]
@@ -64,8 +64,8 @@ pipx install "rembg[cpu,cli]"
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/kimago.git
-cd kimago
+git clone https://github.com/Strashii/PixelForge.git
+cd PixelForge
 ```
 
 ### 3. Link Executable and Desktop Entry
@@ -75,14 +75,14 @@ Set up the script directory and integration files locally:
 mkdir -p ~/.local/bin
 
 # Link the executable
-ln -sf "$(pwd)/scripts/image-tools.sh" ~/.local/bin/kimago
+ln -sf "$(pwd)/scripts/image-tools.sh" ~/.local/bin/pixelforge
 
 # Copy the Dolphin service menu descriptor
 mkdir -p ~/.local/share/kio/servicemenu/
-cp servicemenu/dolphin-image-tools.desktop ~/.local/share/kio/servicemenu/kimago.desktop
+cp servicemenu/dolphin-image-tools.desktop ~/.local/share/kio/servicemenu/pixelforge.desktop
 
 # Configure execution path in the desktop entry
-sed -i "s|Exec=bash EXEC_PATH_PLACEHOLDER|Exec=kimago|" ~/.local/share/kio/servicemenu/kimago.desktop
+sed -i "s|Exec=bash EXEC_PATH_PLACEHOLDER|Exec=pixelforge|" ~/.local/share/kio/servicemenu/pixelforge.desktop
 ```
 
 ---
@@ -101,13 +101,13 @@ sed -i "s|Exec=bash EXEC_PATH_PLACEHOLDER|Exec=kimago|" ~/.local/share/kio/servi
 ### CLI Diagnostics
 You can verify environment properties and dependency status:
 ```bash
-kimago --doctor
+pixelforge --doctor
 ```
 
 Expected Output:
 ```text
 ==================================================
-        KImago - Diagnostic Dashboard (v1.0.0)
+      PixelForge - Diagnostic Dashboard (v1.0.0)
 ==================================================
 [+] KDE Plasma Session Detected: Wayland (Qt 6.7)
 [+] Configuration File: ~/.config/dolphin-image-tools/config.conf
