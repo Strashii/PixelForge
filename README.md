@@ -79,10 +79,7 @@ ln -sf "$(pwd)/scripts/image-tools.sh" ~/.local/bin/pixelforge
 
 # Copy the Dolphin service menu descriptor
 mkdir -p ~/.local/share/kio/servicemenu/
-cp servicemenu/dolphin-image-tools.desktop ~/.local/share/kio/servicemenu/pixelforge.desktop
-
-# Configure execution path in the desktop entry
-sed -i "s|Exec=bash EXEC_PATH_PLACEHOLDER|Exec=pixelforge|" ~/.local/share/kio/servicemenu/pixelforge.desktop
+cp servicemenu/pixelforge.desktop ~/.local/share/kio/servicemenu/
 ```
 
 ---
