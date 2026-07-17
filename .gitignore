@@ -1,0 +1,22 @@
+# Logs y archivos temporales generados por la ejecución
+*.log
+.cache/
+.config/
+
+# Respaldos de editores y archivos temporales del sistema
+*~
+*.swp
+.DS_Store
+
+# Directorios de configuración de IDEs comunes
+.vscode/
+.idea/
+
+# Imágenes de prueba creadas durante el desarrollo
+**/No-Background/
+**/Upscale/
+**/Resize/
+**/Convert/
+*temp*
+*test*
+*.tmp

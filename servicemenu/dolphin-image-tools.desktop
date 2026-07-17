@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Service
+MimeType=image/png;image/jpeg;image/jpg;image/gif;image/webp;image/avif;image/tiff;image/bmp;image/svg+xml;image/x-xcf;image/x-psd;
+Actions=ImageTools;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+X-KDE-Priority=TopLevel
+
+[Desktop Action ImageTools]
+Name=🖼 Image Tools
+Icon=image-x-generic
+Exec=bash EXEC_PATH_PLACEHOLDER %F
